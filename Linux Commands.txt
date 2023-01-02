@@ -45,29 +45,18 @@ mkdir <directory name>
 
 Permissions
 
-
 r (read)
 	read file content (cat)
 	read directory content (ls)
 	
-
 w (write)
 	change file content (vi)
 	create file in directory (touch)
 	
-
-
-
 x (execute)
 	execute the file
 	enter the directory (cd)
 	
-
-
-
-  
-
-
 
 
 
@@ -79,128 +68,51 @@ Here you can see in snapshot there are (-rw-rw-r--)  before the user let’s des
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Chmod : 
 1. You can change the permissions with the chmod command according to your need.
 Syntax :  chmod <groupName>+<permissionName> <fileName>  
 Example : chmod u+x file 
 
-
-  
-
-
-
 Look at the image above; the user owner group has been added to and given authority to execute.
-
-
-
 
 2.To Remove Permission from group : 
 chmod <groupName>-<permissionName> <fileName>  
-        Syntax: 
-chmod g-x file  
-chmod u-w file  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	Syntax: 
+		chmod g-x file  
+		chmod u-w file  
 3.To Add Permission : 
 chmod a+<permissionName> <fileName>  
         Syntax: 
         chmod a+w file  
-  
-
-
-
 4. To Add permission without ‘a’:
-chmod +<permissionName> <fileName>  
-Syntax:
-chmod +w file  
+  chmod +<permissionName> <fileName>  
+	Syntax:
+	chmod +w file  
   
-
-
-
 5. To set Explicit Permission:
         chmod <groupName>=<permissions> <fileName>
         Syntax: chmod o=rw file  
           
 
 
-
-
-
-
-
-
-
-
-
-
 Octal Table:
 binary
-	octal
-	permissions
-	000
-	0
-	---
-	001
-	1
-	--x
-	010
-	2
-	-w-
-	011
-	3
-	-wx
-	100
-	4
-	r--
-	101
-	5
-	r-x
-	110
-	6
-	rw-
-	111
-	7
-	rwx
-	For example, to set r octal will be 4, to set w octal will be 2, to set x octal will be 1.
+	octalpermissions
+	000		0	---
+	001		1	--x
+	010		2	-w-
+	011		3	-wx
+	100		4	r--
+	101		5	r-x
+	110		6	rw-
+	111		7	rwx
+	
+For example, to set r octal will be 4, to set w octal will be 2, to set x octal will be 1.
 From this we can conclude that,
 1. 777 = rwxrwxrwx  
 2. 765 = rwxrw-r-x  
 3. 654 = rw-r-xr--  
   
-
 Umask:
 A set of permissions is applied by default when creating a file or directory. The umask command can be used to view these default permissions.
 
@@ -210,8 +122,6 @@ All Unix systems do not grant freshly created files execution access for securit
 
 You may add execution permission.
         
-  
-
 mkdir -m
 The 'mkdir -m' command can be used to set the mode.
 Syntax:
