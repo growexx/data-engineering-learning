@@ -1,0 +1,229 @@
+﻿Linux Commands
+
+
+1. Pwd : Used to locate current working directory
+2. mkdir : Used to create New directory.
+mkdir <directory name>
+3. rmdir : Used to Delete a directory
+   1. rmdir <directory name>
+4. ls: List all the content of directory
+   1. ls  
+5. touch : It is used to create empty files and also used to create one or many files by running it once.
+6. cat  : it is used to create file ,display the content of the file  and copy the content of  one file to another
+   1. cat >  <filename > (Use to create a file) ctrl+D used to save the file
+   2. cat <existing file> > <new file >  (Use to copy one file to another file)
+   3. cat <filename> (use to read the content of file )
+7. cp : It used to copy one file or folder .
+   1. cp  <existing file> > <new file >
+8. mv : It is used to move a file or directory to another location.
+   1. mv <filename> <directory name>
+9. Rename: rename the file.
+   1. rename ‘s/old-name/new-name/’ files 
+10. head : It displays the first 10 lines of a file.
+   1. head <file name>
+11. tail : it displays the last 10 line of file.
+   1. tail  <FILENAME>
+12. tac : The commands used to display the content in reverse order.
+   1. tac <file name>
+13. su : command provides access to another user ,it allows access of the Linux shell to another user.
+   1. su <username>
+14. id:  this command displays the user id and group id.
+   1. Id
+15. useradd : It is used to add a user on Linux
+   1. Useradd username
+16. passwd : it is used to create and change the password for a user .
+   1. passwd <username>
+17. groupadd : it is used to create a user group.
+   1. groupadd <group name.
+18. grep : The grep is a very useful filter in linux systems, mostly it is used with pipe.
+   1. command  | grep <search item>
+
+
+
+
+
+
+Permissions
+
+
+r (read)
+	read file content (cat)
+	read directory content (ls)
+	
+
+w (write)
+	change file content (vi)
+	create file in directory (touch)
+	
+
+
+
+x (execute)
+	execute the file
+	enter the directory (cd)
+	
+
+
+
+  
+
+
+
+
+
+Here you can see in snapshot there are (-rw-rw-r--)  before the user let’s describe it 
+* 1 (-) :denotes the file type 
+* 2-4 (rw-): permission for user
+* 5-7 (rw-): Permission for Group 
+* 8-10 (r--): permission for other 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chmod : 
+1. You can change the permissions with the chmod command according to your need.
+Syntax :  chmod <groupName>+<permissionName> <fileName>  
+Example : chmod u+x file 
+
+
+  
+
+
+
+Look at the image above; the user owner group has been added to and given authority to execute.
+
+
+
+
+2.To Remove Permission from group : 
+chmod <groupName>-<permissionName> <fileName>  
+        Syntax: 
+chmod g-x file  
+chmod u-w file  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.To Add Permission : 
+chmod a+<permissionName> <fileName>  
+        Syntax: 
+        chmod a+w file  
+  
+
+
+
+4. To Add permission without ‘a’:
+chmod +<permissionName> <fileName>  
+Syntax:
+chmod +w file  
+  
+
+
+
+5. To set Explicit Permission:
+        chmod <groupName>=<permissions> <fileName>
+        Syntax: chmod o=rw file  
+          
+
+
+
+
+
+
+
+
+
+
+
+
+Octal Table:
+binary
+	octal
+	permissions
+	000
+	0
+	---
+	001
+	1
+	--x
+	010
+	2
+	-w-
+	011
+	3
+	-wx
+	100
+	4
+	r--
+	101
+	5
+	r-x
+	110
+	6
+	rw-
+	111
+	7
+	rwx
+	For example, to set r octal will be 4, to set w octal will be 2, to set x octal will be 1.
+From this we can conclude that,
+1. 777 = rwxrwxrwx  
+2. 765 = rwxrw-r-x  
+3. 654 = rw-r-xr--  
+  
+
+Umask:
+A set of permissions is applied by default when creating a file or directory. The umask command can be used to view these default permissions.
+
+
+All Unix systems do not grant freshly created files execution access for security reasons.
+
+
+You may add execution permission.
+        
+  
+
+mkdir -m
+The 'mkdir -m' command can be used to set the mode.
+Syntax:
+mkdir -m <mode> <fileName> 
+Example:
+mkdir -m 777 new1  
+mkdir -m 000 new2  
+  
+
+cp -p:
+Syntax:
+Syntax: cp -p <sourceFile> <destinationFile> 
+        Example : cp -p list dupli.txt 
+          
+Look at the screenshot above; the dupli.txt and files list permissions were different earlier. However, after running "cp -p list dupli.txt," both files now have the same permissions.
