@@ -1,0 +1,146 @@
+﻿Linux commands                                                                                
+LS command: 
+
+Ls command is commonly used in daily linux operations. Command is used in listing content inside a directory.
+
+LS:  ls without any options list files in plain format without information of permission, type, date etc.
+Options: 
+Ls -a: returns  the whole list of the current directory including hidden files.
+Ls -l: returns the list in long list format. 
+Ls -lh: returns file sizes in human readable format.
+Ls -lhs: returns files in descending order according to their size.
+Ls -d*/: used to return display only sub directory.
+Ls -li: print the index number if the file is in the first column.
+Ls -p: used to identify directory by marking (/) line sign.
+Ls -r:  print list in reverse order.
+Ls -R: print content of sub directory also.
+
+
+Mkdir command:
+Mkdir stands for make directory. With help of this we can create a new directory wherever we want in our system.
+Mkdir <dir name>
+Mkdir file1 file2 file3 … fileN.
+
+Rmdir command:
+Rmdir stands for remove directory. With help of this we can remove the directory.
+Rmdir <dir name>
+Rmdir file1
+
+Pwd command: 
+It is used to display the location of the current working directory.
+Pwd
+
+Cd command: 
+Cd command is used to change the current directory.
+Cd <dir name>
+Cd Desktop
+
+Touch command:
+It is used to create empty files.
+Touch <file1> <file2> …
+
+Cat command: 
+It is used to create file, display content. It is used for multi-purpose.
+Cat [option] []file]
+Rm command: 
+Rm command used to remove a file.
+Rm <file name>
+
+Cp command: 
+Cp command is used to copy a file or directory.
+Cp <existing file name> <new file name>
+
+Mv command: 
+Mv command is used to move a file or directory from one location to another location. 
+Mv <file name> <directory path>
+
+
+Rename command: 
+Rename command is used to rename files. It is used to rename a large group of files.
+Example: convert all text files into pdf files. 
+Rename ‘s/\.txt$/\.pdf’*.txt
+
+Linux user commands: 
+Su command: 
+Su command is used to give/provide admin access to another user. 
+Su <username>
+
+Id command:
+Id command is used to display user id and group id.
+Id
+
+Useradd command:  
+Useradd command is used to add or remove a user.
+Useradd <username>
+
+
+Passwd command:
+The passwd command is used to create and change the password for a user.
+Passwd <username>
+
+Groupadd command:
+The groupadd command is used to create a user group.
+
+Groupadd <group name>
+
+How to change directory permission in Linux: 
+To change directory permission in linux, use the following: 
+
+Chmod + rwx filename to add permissions
+Chmod -rwx  directoryname to remove permissions.
+Chmod +x filename to allow executable permissions.
+Chmod -wx filename to take out write and executable permissions.
+
+How to change groups of files and directories in linux:
+
+
+Chgrp groupname filename
+Chgrp groupname foldername
+
+
+How to change ownership in linux:
+
+Chown name filename
+Chown name foldername
+
+
+These commands will give ownership to someone, but all sub files and directories still belong to the original owner.
+
+How to change permissions in numeric code in linux.
+
+
+0: No permission
+1: Execute
+2: Write
+3: Read
+
+
+Permission number are: 
+
+0: -
+1: -x
+2: -w-
+3: -wx
+4: r-
+5: r-x
+6: rw-
+7: rwx
+
+
+For example: 
+Chmod 777 foldername: will give read, write and execute permissions for everyone.
+ 
+
+Field Explanation: 
+-: normal file
+D: directory
+S: socket file
+L : link file
+
+Field 1 - file permission: Next 9 char specifies file permission. Every 3 char specifies read, write, execute permission for user(root), group and others respectively in order.
+ld 2 - Number of links: It specifies the number of links for that file.
+Field 3 - Owner: specifies owner of the file.
+Filed 4 - Group: specifies group of the file.
+Field 5 - Size: specifies size of files in bytes.
+Field 6 - Last modified data & time: specifies date and time of last modification.
+Field 7 - File name: name of the file.
